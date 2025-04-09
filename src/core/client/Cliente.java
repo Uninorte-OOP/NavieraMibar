@@ -4,7 +4,9 @@
  */
 package core.client;
 
+import core.naviera.items.Bulto;
 import core.naviera.items.Carga;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
@@ -27,6 +29,10 @@ public abstract class Cliente {
         this.telefono = telefono;
         this.pais = pais;
         this.cargas = new ArrayList<>();
+    }
+    
+    public void createCarga(String puertoOrigen, String puertoDestino, LocalDate fechaMax, ArrayList<Bulto> inventario) {
+        this.cargas.add(new Carga(this, puertoOrigen, puertoDestino, fechaMax, inventario));
     }
     
 }

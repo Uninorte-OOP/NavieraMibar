@@ -22,13 +22,17 @@ public class Carga {
     private LocalDate fechaMax;
     private ArrayList<Bulto> inventario;
 
-    public Carga(Cliente cliente, Viaje viaje, String puertoOrigen, String puertoDestino, LocalDate fechaMax, ArrayList<Bulto> inventario) {
+    public Carga(Cliente cliente, String puertoOrigen, String puertoDestino, LocalDate fechaMax, ArrayList<Bulto> inventario) {
         this.cliente = cliente;
-        this.viaje = viaje;
+        this.viaje = null;
         this.puertoOrigen = puertoOrigen;
         this.puertoDestino = puertoDestino;
         this.fechaMax = fechaMax;
         this.inventario = inventario;
+    }
+
+    public void setViaje(Viaje viaje) {
+        this.viaje = viaje;
     }
     
 }

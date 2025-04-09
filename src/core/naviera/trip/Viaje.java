@@ -22,13 +22,18 @@ public class Viaje {
     private LocalDate fechaFin;
     private ArrayList<Carga> cargas;
 
-    public Viaje(int id, Barco barco, Ruta ruta, LocalDate fechaInicio, LocalDate fechaFin) {
+    public Viaje(int id, Barco barco, Ruta ruta, LocalDate fechaInicio, int days) {
         this.id = id;
         this.barco = barco;
         this.ruta = ruta;
         this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
+        this.fechaFin = fechaInicio.plusDays(days);
         this.cargas = new ArrayList<>();
+    }
+    
+    public void addCarga(Carga carga) {
+        carga.setViaje(this);
+        this.cargas.add(carga);
     }
     
 }

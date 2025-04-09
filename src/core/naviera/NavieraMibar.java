@@ -8,6 +8,7 @@ import core.client.Cliente;
 import core.naviera.ship.Barco;
 import core.naviera.trip.Ruta;
 import core.naviera.trip.Viaje;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
@@ -26,6 +27,22 @@ public class NavieraMibar {
         this.clientes = new ArrayList<>();
         this.rutas = new ArrayList<>();
         this.viajes = new ArrayList<>();
+    }
+    
+    public void addBarco(Barco barco) {
+        this.barcos.add(barco);
+    }
+    
+    public void addCliente(Cliente cliente) {
+        this.clientes.add(cliente);
+    }
+    
+    public void addRuta(ArrayList<String> ciudades, ArrayList<Double> latitudes, ArrayList<Double> longitudes) {
+        this.rutas.add(new Ruta(ciudades, latitudes, longitudes));
+    }
+    
+    public void addViaje(int id, Barco barco, Ruta ruta, LocalDate fechaInicio, int days) {
+        this.viajes.add(new Viaje(id, barco, ruta, fechaInicio, days));
     }
     
 }

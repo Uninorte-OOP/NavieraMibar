@@ -29,7 +29,7 @@ public class Bulto {
     }
     
     private double calculateCosto() {
-        return 0;
+        return this.peso / (this.alto * this.ancho * this.largo);
     }
     
 }
