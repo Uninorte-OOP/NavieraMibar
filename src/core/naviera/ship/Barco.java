@@ -30,4 +30,46 @@ public abstract class Barco {
         this.viajes = new ArrayList<>();
     }
     
+    public void addRuta(Ruta ruta) {
+        if (!this.rutas.contains(ruta)){
+            this.rutas.add(ruta);
+        }
+    }
+    
+    public void addViaje(Viaje viaje) {
+        this.viajes.add(viaje);
+    }
+
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public boolean isBandera() {
+        return bandera;
+    }
+
+    public String getCapitan() {
+        return capitan;
+    }
+    
+    public int getNumRutas() {
+        return this.rutas.size();
+    }
+    
+    public int getNumViajes() {
+        return this.viajes.size();
+    }
+    
+    public double getGanancias() {
+        double ganancias = 0;
+        for (Viaje viaje : this.viajes) {
+            ganancias += viaje.getGanancias();
+        }
+        return ganancias;
+    }
+    
 }

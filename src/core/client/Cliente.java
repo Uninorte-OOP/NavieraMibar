@@ -35,4 +35,40 @@ public abstract class Cliente {
         this.cargas.add(new Carga(this, puertoOrigen, puertoDestino, fechaMax, inventario));
     }
     
+    public Carga getCarga(int index) {
+        return this.cargas.get(index);
+    }
+    
+    public int getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public ArrayList<Carga> getCargas() {
+        return cargas;
+    }
+    
+    public double getGasto() {
+        double gasto = 0;
+        for (Carga carga : this.cargas) {
+            gasto += carga.getCosto();
+        }
+        return gasto;
+    }
+    
 }

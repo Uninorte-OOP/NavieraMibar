@@ -29,11 +29,22 @@ public class Viaje {
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaInicio.plusDays(days);
         this.cargas = new ArrayList<>();
+        
+        this.barco.addRuta(ruta);
+        this.barco.addViaje(this);
     }
     
     public void addCarga(Carga carga) {
         carga.setViaje(this);
         this.cargas.add(carga);
+    }
+    
+    public double getGanancias() {
+        double ganancias = 0;
+        for (Carga carga : this.cargas) {
+            ganancias += carga.getCosto();
+        }
+        return ganancias;
     }
     
 }

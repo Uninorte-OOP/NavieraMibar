@@ -20,5 +20,17 @@ public class ClienteJuridico extends Cliente {
         this.nombreRepresentante = nombreRepresentante;
         this.telefonoRepresentante = telefonoRepresentante;
     }
+
+    public int getIdRepresentante() {
+        return idRepresentante;
+    }
+
+    public String getNombreRepresentante() {
+        return nombreRepresentante;
+    }
+
+    public String getTelefonoRepresentante() {
+        return telefonoRepresentante;
+    }
     
 }

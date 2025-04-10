@@ -31,6 +31,18 @@ public class Carga {
         this.inventario = inventario;
     }
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public double getCosto() {
+        double costo = 0;
+        for (Bulto bulto : this.inventario) {
+            costo += bulto.getCosto();
+        }
+        return costo;
+    }
+    
     public void setViaje(Viaje viaje) {
         this.viaje = viaje;
     }

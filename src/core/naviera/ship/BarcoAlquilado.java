@@ -22,5 +22,17 @@ public class BarcoAlquilado extends Barco {
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaInicio.plusMonths(months);
     }
+
+    public String getEmpresa() {
+        return empresa;
+    }
+
+    public LocalDate getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public LocalDate getFechaFin() {
+        return fechaFin;
+    }
     
 }
